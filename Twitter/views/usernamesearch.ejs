@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:http="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/style.css"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/stylesheets/usernamesearch.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+</head>
+
+<body ng-app = "getusernamesearch" ng-controller = "handleSearchPageCntr" style="background-color: #f5f8fa">
+<% include navvbar.ejs %>
+<div class="row" align="center">
+
+</div>
+
+<div ng-repeat = "value in data" style="margin-left: 400px;width: 200px;height: 200px" >
+    <br>
+    <br>
+    <div style="background-color: white">
+        <label id = "name">{{value.First_Name}} &nbsp {{value.Last_Name}}</label><br>
+        <label id = "handle">@{{value.Twitter_Handle }}</label>
+        <button id = "follow" type="button" ng-click = "follow(value.Twitter_Handle)" ng-disabled = "visible">Follow</button>
+    </div>
+</div>
+
+<script src = "javascripts/usernamesearchcontroller.js"></script>
+</body>
+</html>

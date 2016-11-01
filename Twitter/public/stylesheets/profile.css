@@ -1,0 +1,195 @@
+.backgroundImage{
+    background-color:#0084B4 !important;
+    height:175px;
+    margin-right:-65px;
+    margin-left:-65px;
+    margin-top: 55px;
+}
+
+.navBarPF {
+    background-color: #fff;
+    border-bottom: 1px solid #e1e8ed;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 60px;
+    margin-right:-67px;
+    margin-left:-67px;
+}
+.navBarPF ul{
+    margin-left: 320px;
+}
+.navBarPF ul li{float: left;}
+.navBarPF ul li a{
+    height: 60px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 0 solid;
+    display: block;
+    line-height: 2;
+    padding: 14px 15px 7px;
+    transition: all .15s ease-in-out;
+    display: inline;
+    font-size: 12px;
+    text-decoration:none;
+}
+.navBarPF ul li:hover{
+    border-bottom : 4px solid #0084B4;
+}
+
+.navBarPF ul li a span.letters{
+    font-size: 11px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    transition: color .15s ease-in-out;
+}
+.navBarPF ul li a span#count1{
+    font-size: 18px;
+    padding-top: 3px;
+    font-weight: 500;
+    transition: color .15s ease-in-out;
+    margin-left:30px;
+
+}
+.navBarPF ul li a span#count2{
+    font-size: 18px;
+    padding-top: 3px;
+    font-weight: 500;
+    transition: color .15s ease-in-out;
+    margin-left:40px;
+
+}
+.navBarPF ul li a span#count3{
+    font-size: 18px;
+    padding-top: 3px;
+    font-weight: 500;
+    transition: color .15s ease-in-out;
+    margin-left:39px;
+
+}
+#browser{
+    background-color: #EFEFEF;
+    padding-top: 60px;
+    height: 100vh;
+}
+
+#ProfilePicWindow{
+    background-color: white;
+    margin-left: 30px;
+    margin-top: -200px;
+    height: 200px ;
+    width: 220px;
+    border-radius: 10px;
+}
+#insideProfilePicWindow{
+    background-color: #0084B4;
+    margin-left: 10px;
+    margin-top: -187px;
+    margin-bottom: 200px;
+    height: 177px ;
+    width: 200px;
+    border-radius: 10px;
+}
+ul{
+    list-style-type: none;
+}
+
+#window{
+    background-color: white;
+    height: 20px;
+    width: 300px;
+    margin-top: -600px;
+    margin-left: 280px;
+}
+#innerWindow{
+    background-color: white;
+    width: 300px;
+    height: 10px;
+}
+#innerProfilePic{
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin-top: -39px;
+    margin-left: 20px;
+}
+#innermostPic{
+    background-color: #0084B4;
+    width: 60px;
+    height: 55px;
+    border-radius: 5px;
+    margin-top: -65px;
+    margin-left: 25px;
+    padding-bottom: 65px;
+}
+
+#name{
+    margin-top: 130px;
+    margin-left: 30px;
+    font-weight: bold;
+    color: #292f33;
+}
+
+
+
+#handle{
+    color: #b1bbc3;
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: -30px;
+}
+
+.size{
+    height: 100%;
+    width: 1000px
+}
+
+#a{
+    margin-left: 90px;
+    font-size: 20px;
+    color: black;
+}
+#myHandle{
+    margin-top: -200px;
+    margin-left: 90px;
+    color: black;
+}
+#Email{
+    margin-top: -200px;
+    margin-left: 90px;
+    color: black;
+}
+#Birth_Date{
+    margin-top: -200px;
+    margin-left: 90px;
+    color: black;
+}
+#Location{
+    margin-top: -200px;
+    margin-left: 10px;
+    color: black;
+}
+#locationTag{
+    margin-left: 85px;
+}
+
+
+.userInfo{
+    background-color: white;
+    margin-right: 550px;
+    margin-left: 316px;
+    padding-top: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 538px;
+    margin-top: 10px;
+    display: block;
+    height: 66px;
+    border-color: #e1e8ed;
+    margin-bottom: -9px;
+    line-height: 52px;
+    word-wrap: break-word;
+}
+#comments{
+    margin-top: -33px;
+}

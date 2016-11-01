@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel='stylesheet' href='/stylesheets/profile.css' />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+</head>
+<body ng-app = 'profile' ng-controller = 'follow'>
+<% include navvbar.ejs %>
+
+<div class="navBarPF" style="margin-top: 100px" >
+    <ul>
+
+        <li><a ng-click = "getFollowingList()"><span class="letters">following</span><div></div><!--<span id="count2">1</span>--></a></li>
+        <li><a ng-click = "getFollowersList()"><span class="letters">followers</span><div></div><!--<span id="count3">1</span>--></a></li>
+    </ul>
+
+</div>
+<div id="browser">
+    <div id = "ProfilePicWindow">
+        <img src="../images/dp.png" class="img-rounded" style="margin-left: 32px; margin-top: 36px;" width="150" height="150" />
+
+    </div>
+    <a id ="a" href="loggedin"> {{ result[0].First_Name}} &nbsp {{result[0].Last_Name}}</a><br>
+    <label id = "myHandle">@{{result[0].Twitter_Handle }}</label><br>
+    <label id = "Email">Contact :{{result[0].Email }}</label><br>
+    <label id = "Birth_Date">Birthday :{{result[0].Birth_Date }}</label><br>
+    <!--<img id="locationTag" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-location-20.png">-->
+    <label id = "Location" style="margin-left: 90px">{{result[0].Location }}</label>
+
+    <div ng-repeat = "value in data" style="margin-left: 400px" >
+        <br>
+        <br>
+        <div style="background-color: white">
+                <label >{{value.First_Name}} &nbsp {{value.Last_Name}}</label><br>
+                <label >@{{value.Twitter_Handle }}</label>
+        </div>
+    </div>
+        </div>
+        </div>
+
+
+<script src = "javascripts/profilecontroller.js"></script>
+</body>
+</html>

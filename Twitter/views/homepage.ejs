@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="./jquery/jqueryHome.js"></script>
+
+</head>
+
+<body ng-app = "homeLogin">
+
+<div class = "container-fluid" >
+    <div class="image"  >
+        <img id="icon" src="../images/twitter_icon.png" style="width :420px; height: 160px" />
+        <div>
+            <form action="/signUp" method="get">
+                <button type="submit" class = "btn btn-lg pull-right" id = "button2" >Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id = "logInTable" class="col-sm-3 pull-left" ng-controller = "control">
+    <div id="div">
+        <h3 class="whiteText">Log In</h3>
+        <p id = "cred" ng-hide = "cred">You entered wrong id or password</p>
+        <form class = "pull-right">
+            <div class="form-group pull-left">
+                <input type="text" class="form-control" id="name" placeholder="Username" ng-model ="name" required>
+            </div>
+            <div class="form-group pull-left">
+                <input type="password" class="form-control" id="password" placeholder="Password"  ng-model = "password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="buttonLogin btn" ng-click = "clickLogin();">Log in</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src = "javascripts/homepagecontroller.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:http="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/style.css"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/stylesheets/loggedin.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+</head>
+
+<body ng-app = "homePage"  style="background-color: #f5f8fa">
+
+<div ng-controller = "searchCntr">
+
+&lt;!&ndash; TWEET BUTTON (GLOBAL) &ndash;&gt;
+<div class="col-md1 pull right" >
+
+    <div class="pull-right">
+        <form action = '/logout' method="post">
+            <button id="globaltweet">Tweet</button>
+        </form>
+    </div>
+</div>
+
+&lt;!&ndash; Profile Options &ndash;&gt;
+
+<div class="col-md3 pull-right ">
+    <div class=" pull-right ">
+        <ul  class="dropdown">
+            &lt;!&ndash;<ul class="dropdown">&ndash;&gt;
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <img src="https://cdn4.iconfinder.com/data/icons/twitter-ui-set/128/Egg_Proffile_And_Settings_Twitter-128.png" id="profIcon" width="45" height="45"></img>
+                &lt;!&ndash;<span class="caret"></span>&ndash;&gt; </a>
+            <div class="dropdown-menu">
+            </div>
+
+        </ul>
+    </div></div>
+
+&lt;!&ndash; SEARCH FUNCTIONALITY &ndash;&gt;
+<div class="col-md-3 pull-right">
+    <div class="pull-right">
+        <form class="navbar-form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" ng-model="search" id="srch-term">
+                <div class="input-group-btn">
+                    <button id="btn" class="btn btn-link" type="submit" ng-click = "searchHash()"><i class="glyphicon glyphicon-search"></i></button>
+                </div></div>
+
+        </form>
+    </div>
+
+</div>
+</div>
+
+</nav>-->
+    <% include navvbar.ejs %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid" id = "welcome" ng-controller = "profile">
+    <div class="col-sm-3" id="panelsize">
+        <div class="panel panel-primary" id="toppanel" style="height: 200px">
+            <!--<div id="panelHeading" class="panel-heading">
+            </div>-->
+            <div id="" class="panel-body">
+                <img id="profile_pic" src="../images/dp.png" class="img-rounded" style="margin-top: 40px"  alt="Cinque Terre" width="70" height="70" />
+
+                <a href="profile"> {{result.First_Name }}&nbsp{{ result.Last_Name}}</a>
+
+
+                <div class="container" id = "badges" >
+                    <a href="#">Tweets <span class="badge" style="background-color: brown;border-radius: 3px">{{ result.tweet_count }}</span></a>
+                    <a href="#">Following <span class="badge" style="background-color: brown;border-radius: 3px">{{ result.following_count }}</span></a>
+                    <a href="#">Follower <span class="badge" style="background-color: brown;border-radius: 3px">{{ result.followers_count}}</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="tweet-content">
+<img src = "https://pbs.twimg.com/profile_images/707016644527149056/QNmQYGUk_normal.jpg" width="45" height="45" id="tweet">
+  <div aria-owns="typeahead-dropdown-4" aria-expanded="false" aria-autocomplete="list" dir="ltr" aria-labelledby="tweet-box-home-timeline-label" name="tweet" id="tweet-box-home-timeline" class="tweet-box rich-editor" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder-default="t\Tweet here?" data-placeholder-poll-composer-on="Ask a question..." contenteditable="true">What’s happening?<br></div>
+
+</div>
+
+-->
+<div  ng-controller = "HomePageCntr">
+    <div class="container-fluid" id="tweetfield">
+        <div class="" id="txt">
+            <form>
+                <textarea class="" rows="1" cols="50" ng-model="tweetValue" maxlength="140" placeholder = "Tweet here!!" onfocus="this.rows=5;" style="margin-top: 80px; height: 100px" onblur="this.rows=1;" id="txta"></textarea>
+                <button type="button" value="Tweet" id="tweet" ng-click = "insertTweet()" >Tweet</button>
+            </form>
+        </div>
+    </div>
+    <div ng-repeat = "value in data"  >
+        <div id = "retweetComment" align="right" ng-show="value.Retweet_User != '0' "> <b> <i>Originally tweeted by @ {{value.Retweet_User}}</i> </b> </div>
+        <a ng-click = "goToOtherProfile(value.First_Name,value.Last_Name,value.Twitter_Handle)"> <div class = "userInfo"><span id ="name">{{ value.First_Name}} {{value.Last_Name }}</span><span id = "handle"> @{{value.Twitter_Handle}}</span></a>
+
+        <div id="comments"> {{ value.Comments}} </div>
+
+       <!-- <div id = "retweetButton" ng-show  = "value.Twitter_Handle != value.Original_Handle"><a ng-click = "retweetdata(value.Comments,value.Twitter_Handle)">
+                <img src="https://cdn3.iconfinder.com/data/icons/social-1/100/retweet-24.png" /></a></div>-->
+       </div>
+    </div>
+</div>
+<script src = "javascripts/loggedincontroller.js"></script>
+</body>
+</html>
